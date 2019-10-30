@@ -170,6 +170,8 @@
     	
         <li><a href="https://github.com/lisuibi" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
         
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
     </ul>
 
     </nav>
@@ -247,7 +249,7 @@
                 <a href="/2019/10/29/hello-world/" class="title">Hello World</a>
               </p>
               <p class="item-date">
-                <time datetime="2019-10-29T12:11:22.000Z" itemprop="datePublished">2019-10-29</time>
+                <time datetime="2019-10-29T12:11:00.000Z" itemprop="datePublished">2019-10-29</time>
               </p>
             </div>
           </li>
@@ -326,18 +328,19 @@
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
-	
+    
 	
     <ul class="social-links">
     	
         <li><a href="https://github.com/lisuibi" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
         
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
     </ul>
 
     <div class="copyright">
-    	
-        <div class="publishby">
-        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        
+        <div class="powered-by">
         </div>
     </div>
 </footer>
@@ -457,5 +460,10 @@ $(open().init);
 
 
 
+	
+	{% if theme.canvas_nest %}
+	<script type="text/javascript"
+	color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+	{% endif %}
 </body>
 </html>
