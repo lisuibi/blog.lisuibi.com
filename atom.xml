@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lisuibi.github.io/"/>
-  <updated>2019-10-30T08:02:29.230Z</updated>
+  <updated>2019-10-31T14:14:30.003Z</updated>
   <id>https://lisuibi.github.io/</id>
   
   <author>
@@ -17,24 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://lisuibi.github.io/2019/10/29/hello-world/"/>
-    <id>https://lisuibi.github.io/2019/10/29/hello-world/</id>
-    <published>2019-10-29T12:11:00.000Z</published>
-    <updated>2019-10-30T08:02:29.230Z</updated>
+    <title>memcache和redis的区别</title>
+    <link href="https://lisuibi.github.io/2019/10/31/memcache%E5%92%8Credis%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://lisuibi.github.io/2019/10/31/memcache和redis的区别/</id>
+    <published>2019-10-31T13:41:00.000Z</published>
+    <updated>2019-10-31T14:14:30.003Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h4 id="本篇文章记录memcache和redis的区别"><a href="#本篇文章记录memcache和redis的区别" class="headerlink" title="本篇文章记录memcache和redis的区别"></a>本篇文章记录memcache和redis的区别</h4><a id="more"></a><p>1.memcache 和 redis 都是将数据放在内存里，都是内存数据库。</p><!--more--><p>2.memcache 存储value只有1MB，redis最大可以达到1GB。</p><!--more--><p>2.redis不仅支持简单的数据类型，还支持hash,list,set等数据类型。</p><!--more--><p>3.存储数据安全-memcache断电后，数据就没了；redis可以定期将数据保存到磁盘（持久化）</p><!--more--><p>4.Redis支持数据的备份，即master-slave模式的数据备份。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
+      &lt;h4 id=&quot;本篇文章记录memcache和redis的区别&quot;&gt;&lt;a href=&quot;#本篇文章记录memcache和redis的区别&quot; class=&quot;headerlink&quot; title=&quot;本篇文章记录memcache和redis的区别&quot;&gt;&lt;/a&gt;本篇文章记录memcache和redis的区别&lt;/h4&gt;
     
     </summary>
     
     
+      <category term="-后端" scheme="https://lisuibi.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="-缓存" scheme="https://lisuibi.github.io/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
@@ -43,13 +44,13 @@
     <link href="https://lisuibi.github.io/2019/07/28/phpstudy2018-%E5%AE%89%E8%A3%85redis%E6%8B%93%E5%B1%95/"/>
     <id>https://lisuibi.github.io/2019/07/28/phpstudy2018-安装redis拓展/</id>
     <published>2019-07-28T05:26:51.000Z</published>
-    <updated>2019-10-30T01:58:55.762Z</updated>
+    <updated>2019-10-31T14:09:46.712Z</updated>
     
-    <content type="html"><![CDATA[<p>本篇博文使用phpstudy2018安装redis拓展</p><a id="more"></a><p>phpstudy 安装redis拓展，首先要在php-redis官网下载库文件，<a href="http://pecl.php.net/package/redis" target="_blank" rel="noopener">http://pecl.php.net/package/redis</a><br><img src="/images/20190728144712.png" alt=""><br>windows系统点击右边的DLL进行下载，当前我选择的版本是5.0.1<br><img src="/images/20190728145314.png" alt=""><br>注意注意(别踩坑)：<br>通过phpinfo()查看自己的php版本（根据自己的php环境版本下载对应的redis库文件）：<br><img src="/images/20190728145728.png" alt=""></p><p>我当前是version 7.1.13 Architecture为x86，那么我应该下载对应php 7.1 的x86版本的redis库文件：<br><img src="/images/20190728150134.png" alt=""></p><p>下载解压，将php_redis.pdb，php_redis.dll两个文件放入对应php版本中的ext文件夹中：<br><img src="/images/20190728150537.png" alt=""></p><p>修改php.ini配置文件：<br><img src="/images/20190728150825.png" alt=""></p><p>完成之后，重启phpstudy；<br>phpinfo()，如果出现redis如图，那么就安装完成：<br><img src="/images/20190728151113.png" alt=""></p><p>大功告成，奋斗吧，骚年！！<br><img src="/images/46.jpg" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h4 id="本篇博文使用phpstudy2018安装redis拓展"><a href="#本篇博文使用phpstudy2018安装redis拓展" class="headerlink" title="本篇博文使用phpstudy2018安装redis拓展"></a>本篇博文使用phpstudy2018安装redis拓展</h4><a id="more"></a><p>phpstudy 安装redis拓展，首先要在php-redis官网下载库文件，<a href="http://pecl.php.net/package/redis" target="_blank" rel="noopener">http://pecl.php.net/package/redis</a><br><img src="/images/20190728144712.png" alt=""><br>windows系统点击右边的DLL进行下载，当前我选择的版本是5.0.1<br><img src="/images/20190728145314.png" alt=""><br>注意注意(别踩坑)：<br>通过phpinfo()查看自己的php版本（根据自己的php环境版本下载对应的redis库文件）：<br><img src="/images/20190728145728.png" alt=""></p><p>我当前是version 7.1.13 Architecture为x86，那么我应该下载对应php 7.1 的x86版本的redis库文件：<br><img src="/images/20190728150134.png" alt=""></p><p>下载解压，将php_redis.pdb，php_redis.dll两个文件放入对应php版本中的ext文件夹中：<br><img src="/images/20190728150537.png" alt=""></p><p>修改php.ini配置文件：<br><img src="/images/20190728150825.png" alt=""></p><p>完成之后，重启phpstudy；<br>phpinfo()，如果出现redis如图，那么就安装完成：<br><img src="/images/20190728151113.png" alt=""></p><p>大功告成，奋斗吧，骚年！！<br><img src="/images/46.jpg" alt=""></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;本篇博文使用phpstudy2018安装redis拓展&lt;/p&gt;
+      &lt;h4 id=&quot;本篇博文使用phpstudy2018安装redis拓展&quot;&gt;&lt;a href=&quot;#本篇博文使用phpstudy2018安装redis拓展&quot; class=&quot;headerlink&quot; title=&quot;本篇博文使用phpstudy2018安装redis拓展&quot;&gt;&lt;/a&gt;本篇博文使用phpstudy2018安装redis拓展&lt;/h4&gt;
     
     </summary>
     
