@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lisuibi.github.io/"/>
-  <updated>2019-12-16T02:03:41.872Z</updated>
+  <updated>2019-12-26T05:15:29.828Z</updated>
   <id>https://lisuibi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win10 安装mongodb</title>
+    <link href="https://lisuibi.github.io/2019/12/26/win-%E5%AE%89%E8%A3%85mongodb/"/>
+    <id>https://lisuibi.github.io/2019/12/26/win-安装mongodb/</id>
+    <published>2019-12-26T01:36:03.000Z</published>
+    <updated>2019-12-26T05:15:29.828Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="教程记录win安装mongodb"><a href="#教程记录win安装mongodb" class="headerlink" title="教程记录win安装mongodb"></a>教程记录win安装mongodb</h3><p>安装前先到mongodb官网下载mongodb,附上链接<a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">https://www.mongodb.com/download-center/community</a><br><img src="/images/20191226094024.png" alt=""></p><p>下载完成之后会得到一个mongodb的zip文件压缩包。</p><p>直接进行解压文件，我是解压到E:\mongodb。<br><img src="/images/20191226094649.png" alt=""></p><h3 id="创建数据目录-在当前mongodb安装目录键入cmd-："><a href="#创建数据目录-在当前mongodb安装目录键入cmd-：" class="headerlink" title="创建数据目录(在当前mongodb安装目录键入cmd)："></a>创建数据目录(在当前mongodb安装目录键入cmd)：</h3><p><img src="/images/20191226095508.png" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir data</span><br><span class="line">cd data</span><br><span class="line">mkdir db</span><br><span class="line">mkdir log</span><br></pre></td></tr></table></figure><p>附上图：</p><p><img src="/images/20191226100503.png" alt=""><br><img src="/images/20191226100543.png" alt=""></p><p>db用来保存数据库文件，log用来保存日志文件。</p><p>你也可以通过 window 的资源管理器中创建这些目录，而不一定通过命令行。</p><h3 id="新建mongo-conf："><a href="#新建mongo-conf：" class="headerlink" title="新建mongo.conf："></a>新建mongo.conf：</h3><p><img src="/images/20191226101953.png" alt=""><br>配置内容如下（具体路径根据自己创建的目录路径）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dbpath=E:\mongodb\data\db  </span><br><span class="line">logpath=E:\mongodb\data\log\mongodb.log</span><br></pre></td></tr></table></figure><p><img src="/images/20191226102143.png" alt=""></p><h3 id="启动MongoDB："><a href="#启动MongoDB：" class="headerlink" title="启动MongoDB："></a>启动MongoDB：</h3><p>切换到bin目录，键入cmd，输入：mongod –config “E:\mongodb\mongo.conf”</p><p>查看data目录和log目录是否有文件生成，如下则启动成功：<br><img src="/images/20191226102611.png" alt=""></p><p><img src="/images/20191226102636.png" alt=""></p><h3 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h3><p>打开浏览器，输入<a href="http://localhost:27017/，如下说明启动成功" target="_blank" rel="noopener">http://localhost:27017/，如下说明启动成功</a><br><img src="/images/20191226102857.png" alt=""></p><h3 id="连接："><a href="#连接：" class="headerlink" title="连接："></a>连接：</h3><p>在bin目录键入cmd，输入mongo<br><img src="/images/20191226103045.png" alt=""><br>连接成功后输入一些命令来查看：<br><img src="/images/20191226103301.png" alt=""></p><h3 id="作为系统服务："><a href="#作为系统服务：" class="headerlink" title="作为系统服务："></a>作为系统服务：</h3><p>以上启动服务器只是一次性的，当关闭了命令窗口，服务器就会关闭。可以将mongodb作为windows服务，然后通过命令控制来随时开启或关闭，以方便使用。</p><p>切换到bin目录，并以管理员身份运行，输入mongod –config “E:\mongodb\mongo.conf” –install –serviceName “mongodb”<br><img src="/images/20191226104128.png" alt=""><br>打开系统服务查看<br><img src="/images/20191226105925.png" alt=""></p><h3 id="通过win命令启动mongodb服务"><a href="#通过win命令启动mongodb服务" class="headerlink" title="通过win命令启动mongodb服务"></a>通过win命令启动mongodb服务</h3><p>确保是在管理员用户，切换到bin文件夹，输入：net stop mongodb，</p><p>等关闭完成：<br><img src="/images/20191226110347.png" alt=""></p><h3 id="配置环境变量-根据自己mongodb的bin目录路径"><a href="#配置环境变量-根据自己mongodb的bin目录路径" class="headerlink" title="配置环境变量(根据自己mongodb的bin目录路径)"></a>配置环境变量(根据自己mongodb的bin目录路径)</h3><p><img src="/images/20191226125812.png" alt=""></p><p><img src="/images/20191226130149.png" alt=""></p><p><img src="/images/20191226130248.png" alt=""></p><h3 id="编写bat文件用于启动和关闭mongodb服务"><a href="#编写bat文件用于启动和关闭mongodb服务" class="headerlink" title="编写bat文件用于启动和关闭mongodb服务"></a>编写bat文件用于启动和关闭mongodb服务</h3><p>新建startMongodb.bat和stopMongodb.bat文件<br><img src="/images/20191226130645.png" alt=""></p><p>startMongodb.bat中：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mongodb</span><br></pre></td></tr></table></figure><p>stopMongodb.bat中：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net stop mongodb</span><br></pre></td></tr></table></figure><h4 id="bat启动时："><a href="#bat启动时：" class="headerlink" title="bat启动时："></a>bat启动时：</h4><p>右键startMongodb.bat文件，以管理员身份运行</p><p><img src="/images/20190224163953229.png" alt=""></p><h4 id="bat关闭时"><a href="#bat关闭时" class="headerlink" title="bat关闭时:"></a>bat关闭时:</h4><p>右击stopMongodb.bat，以管理员运行：<br><img src="/images/20190224164057554.png" alt=""></p><p>以上就完成了！！奋斗吧，骚年！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;教程记录win安装mongodb&quot;&gt;&lt;a href=&quot;#教程记录win安装mongodb&quot; class=&quot;headerlink&quot; title=&quot;教程记录win安装mongodb&quot;&gt;&lt;/a&gt;教程记录win安装mongodb&lt;/h3&gt;&lt;p&gt;安装前先到mongodb官网
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>国内常用的镜像源</title>

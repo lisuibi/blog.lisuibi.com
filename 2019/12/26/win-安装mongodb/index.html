@@ -17,19 +17,40 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>国内常用的镜像源 | 致梦Blog</title>
-  <meta name="description" content="总结一些国内的镜像源，方便以后使用清华大学镜像站: https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn网易云镜像站：http:&#x2F;&#x2F;mirrors.163.com腾讯镜像站：https:&#x2F;&#x2F;mirrors.cloud.tencent.com阿里镜像站： https:&#x2F;&#x2F;developer.aliyun.com&#x2F;mirror以上镜像源，首选网易和阿里云，相对稳定！！">
-<meta name="keywords" content="其它">
+  <title>win10 安装mongodb | 致梦Blog</title>
+  <meta name="description" content="教程记录win安装mongodb安装前先到mongodb官网下载mongodb,附上链接https:&#x2F;&#x2F;www.mongodb.com&#x2F;download-center&#x2F;community 下载完成之后会得到一个mongodb的zip文件压缩包。 直接进行解压文件，我是解压到E:\mongodb。 创建数据目录(在当前mongodb安装目录键入cmd)： 1234mkdir datacd datam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="国内常用的镜像源">
-<meta property="og:url" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;2019&#x2F;12&#x2F;16&#x2F;%E6%80%BB%E7%BB%93%E4%B8%80%E4%BA%9B%E9%95%9C%E5%83%8F%E6%BA%90&#x2F;index.html">
+<meta property="og:title" content="win10 安装mongodb">
+<meta property="og:url" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;2019&#x2F;12&#x2F;26&#x2F;win-%E5%AE%89%E8%A3%85mongodb&#x2F;index.html">
 <meta property="og:site_name" content="致梦de博客">
-<meta property="og:description" content="总结一些国内的镜像源，方便以后使用清华大学镜像站: https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn网易云镜像站：http:&#x2F;&#x2F;mirrors.163.com腾讯镜像站：https:&#x2F;&#x2F;mirrors.cloud.tencent.com阿里镜像站： https:&#x2F;&#x2F;developer.aliyun.com&#x2F;mirror以上镜像源，首选网易和阿里云，相对稳定！！">
+<meta property="og:description" content="教程记录win安装mongodb安装前先到mongodb官网下载mongodb,附上链接https:&#x2F;&#x2F;www.mongodb.com&#x2F;download-center&#x2F;community 下载完成之后会得到一个mongodb的zip文件压缩包。 直接进行解压文件，我是解压到E:\mongodb。 创建数据目录(在当前mongodb安装目录键入cmd)： 1234mkdir datacd datam">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-16T02:03:41.872Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226094024.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226094649.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226095508.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226100503.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226100543.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226101953.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226102143.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226102611.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226102636.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226102857.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226103045.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226103301.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226104128.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226105925.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226110347.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226125812.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226130149.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226130248.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226130645.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20190224163953229.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20190224164057554.png">
+<meta property="og:updated_time" content="2019-12-26T05:15:29.828Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191226094024.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://lisuibi.github.io/2019/12/16/%E6%80%BB%E7%BB%93%E4%B8%80%E4%BA%9B%E9%95%9C%E5%83%8F%E6%BA%90/index.html">
+  <link rel="canonical" href="https://lisuibi.github.io/2019/12/26/win-%E5%AE%89%E8%A3%85mongodb/index.html">
   
     <link rel="alternate" href="/atom.xml" title="致梦de博客" type="application/atom+xml">
   
@@ -330,14 +351,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-总结一些镜像源" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-win-安装mongodb" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      国内常用的镜像源
+      win10 安装mongodb
     </h1>
   
 
@@ -345,17 +366,12 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/12/16/%E6%80%BB%E7%BB%93%E4%B8%80%E4%BA%9B%E9%95%9C%E5%83%8F%E6%BA%90/" class="article-date">
-	  <time datetime="2019-12-16T01:54:00.000Z" itemprop="datePublished">2019-12-16</time>
+	<a href="/2019/12/26/win-%E5%AE%89%E8%A3%85mongodb/" class="article-date">
+	  <time datetime="2019-12-26T01:36:03.000Z" itemprop="datePublished">2019-12-26</time>
 	</a>
 </span>
         
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E5%85%B6%E5%AE%83/" rel="tag">其它</a>
-  </span>
-
 
         
 	<span class="article-read hidden-xs">
@@ -366,13 +382,47 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/12/16/%E6%80%BB%E7%BB%93%E4%B8%80%E4%BA%9B%E9%95%9C%E5%83%8F%E6%BA%90/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/12/26/win-%E5%AE%89%E8%A3%85mongodb/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="总结一些国内的镜像源，方便以后使用"><a href="#总结一些国内的镜像源，方便以后使用" class="headerlink" title="总结一些国内的镜像源，方便以后使用"></a>总结一些国内的镜像源，方便以后使用</h3><h4 id="清华大学镜像站-https-mirrors-tuna-tsinghua-edu-cn"><a href="#清华大学镜像站-https-mirrors-tuna-tsinghua-edu-cn" class="headerlink" title="清华大学镜像站: https://mirrors.tuna.tsinghua.edu.cn"></a>清华大学镜像站: <a href="https://mirrors.tuna.tsinghua.edu.cn" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn</a></h4><h4 id="网易云镜像站：http-mirrors-163-com"><a href="#网易云镜像站：http-mirrors-163-com" class="headerlink" title="网易云镜像站：http://mirrors.163.com"></a>网易云镜像站：<a href="http://mirrors.163.com" target="_blank" rel="noopener">http://mirrors.163.com</a></h4><h4 id="腾讯镜像站：https-mirrors-cloud-tencent-com"><a href="#腾讯镜像站：https-mirrors-cloud-tencent-com" class="headerlink" title="腾讯镜像站：https://mirrors.cloud.tencent.com"></a>腾讯镜像站：<a href="https://mirrors.cloud.tencent.com" target="_blank" rel="noopener">https://mirrors.cloud.tencent.com</a></h4><h4 id="阿里镜像站：-https-developer-aliyun-com-mirror"><a href="#阿里镜像站：-https-developer-aliyun-com-mirror" class="headerlink" title="阿里镜像站： https://developer.aliyun.com/mirror"></a>阿里镜像站： <a href="https://developer.aliyun.com/mirror" target="_blank" rel="noopener">https://developer.aliyun.com/mirror</a></h4><h4 id="以上镜像源，首选网易和阿里云，相对稳定！！"><a href="#以上镜像源，首选网易和阿里云，相对稳定！！" class="headerlink" title="以上镜像源，首选网易和阿里云，相对稳定！！"></a>以上镜像源，首选网易和阿里云，相对稳定！！</h4>
+        <h3 id="教程记录win安装mongodb"><a href="#教程记录win安装mongodb" class="headerlink" title="教程记录win安装mongodb"></a>教程记录win安装mongodb</h3><p>安装前先到mongodb官网下载mongodb,附上链接<a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">https://www.mongodb.com/download-center/community</a><br><img src="/images/20191226094024.png" alt=""></p>
+<p>下载完成之后会得到一个mongodb的zip文件压缩包。</p>
+<p>直接进行解压文件，我是解压到E:\mongodb。<br><img src="/images/20191226094649.png" alt=""></p>
+<h3 id="创建数据目录-在当前mongodb安装目录键入cmd-："><a href="#创建数据目录-在当前mongodb安装目录键入cmd-：" class="headerlink" title="创建数据目录(在当前mongodb安装目录键入cmd)："></a>创建数据目录(在当前mongodb安装目录键入cmd)：</h3><p><img src="/images/20191226095508.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir data</span><br><span class="line">cd data</span><br><span class="line">mkdir db</span><br><span class="line">mkdir log</span><br></pre></td></tr></table></figure>
+<p>附上图：</p>
+<p><img src="/images/20191226100503.png" alt=""><br><img src="/images/20191226100543.png" alt=""></p>
+<p>db用来保存数据库文件，log用来保存日志文件。</p>
+<p>你也可以通过 window 的资源管理器中创建这些目录，而不一定通过命令行。</p>
+<h3 id="新建mongo-conf："><a href="#新建mongo-conf：" class="headerlink" title="新建mongo.conf："></a>新建mongo.conf：</h3><p><img src="/images/20191226101953.png" alt=""><br>配置内容如下（具体路径根据自己创建的目录路径）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dbpath=E:\mongodb\data\db  </span><br><span class="line">logpath=E:\mongodb\data\log\mongodb.log</span><br></pre></td></tr></table></figure>
+<p><img src="/images/20191226102143.png" alt=""></p>
+<h3 id="启动MongoDB："><a href="#启动MongoDB：" class="headerlink" title="启动MongoDB："></a>启动MongoDB：</h3><p>切换到bin目录，键入cmd，输入：mongod –config “E:\mongodb\mongo.conf”</p>
+<p>查看data目录和log目录是否有文件生成，如下则启动成功：<br><img src="/images/20191226102611.png" alt=""></p>
+<p><img src="/images/20191226102636.png" alt=""></p>
+<h3 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h3><p>打开浏览器，输入<a href="http://localhost:27017/，如下说明启动成功" target="_blank" rel="noopener">http://localhost:27017/，如下说明启动成功</a><br><img src="/images/20191226102857.png" alt=""></p>
+<h3 id="连接："><a href="#连接：" class="headerlink" title="连接："></a>连接：</h3><p>在bin目录键入cmd，输入mongo<br><img src="/images/20191226103045.png" alt=""><br>连接成功后输入一些命令来查看：<br><img src="/images/20191226103301.png" alt=""></p>
+<h3 id="作为系统服务："><a href="#作为系统服务：" class="headerlink" title="作为系统服务："></a>作为系统服务：</h3><p>以上启动服务器只是一次性的，当关闭了命令窗口，服务器就会关闭。可以将mongodb作为windows服务，然后通过命令控制来随时开启或关闭，以方便使用。</p>
+<p>切换到bin目录，并以管理员身份运行，输入mongod –config “E:\mongodb\mongo.conf” –install –serviceName “mongodb”<br><img src="/images/20191226104128.png" alt=""><br>打开系统服务查看<br><img src="/images/20191226105925.png" alt=""></p>
+<h3 id="通过win命令启动mongodb服务"><a href="#通过win命令启动mongodb服务" class="headerlink" title="通过win命令启动mongodb服务"></a>通过win命令启动mongodb服务</h3><p>确保是在管理员用户，切换到bin文件夹，输入：net stop mongodb，</p>
+<p>等关闭完成：<br><img src="/images/20191226110347.png" alt=""></p>
+<h3 id="配置环境变量-根据自己mongodb的bin目录路径"><a href="#配置环境变量-根据自己mongodb的bin目录路径" class="headerlink" title="配置环境变量(根据自己mongodb的bin目录路径)"></a>配置环境变量(根据自己mongodb的bin目录路径)</h3><p><img src="/images/20191226125812.png" alt=""></p>
+<p><img src="/images/20191226130149.png" alt=""></p>
+<p><img src="/images/20191226130248.png" alt=""></p>
+<h3 id="编写bat文件用于启动和关闭mongodb服务"><a href="#编写bat文件用于启动和关闭mongodb服务" class="headerlink" title="编写bat文件用于启动和关闭mongodb服务"></a>编写bat文件用于启动和关闭mongodb服务</h3><p>新建startMongodb.bat和stopMongodb.bat文件<br><img src="/images/20191226130645.png" alt=""></p>
+<p>startMongodb.bat中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mongodb</span><br></pre></td></tr></table></figure>
+
+<p>stopMongodb.bat中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net stop mongodb</span><br></pre></td></tr></table></figure>
+<h4 id="bat启动时："><a href="#bat启动时：" class="headerlink" title="bat启动时："></a>bat启动时：</h4><p>右键startMongodb.bat文件，以管理员身份运行</p>
+<p><img src="/images/20190224163953229.png" alt=""></p>
+<h4 id="bat关闭时"><a href="#bat关闭时" class="headerlink" title="bat关闭时:"></a>bat关闭时:</h4><p>右击stopMongodb.bat，以管理员运行：<br><img src="/images/20190224164057554.png" alt=""></p>
+<p>以上就完成了！！奋斗吧，骚年！！</p>
+
       
     </div>
     <div class="article-footer">
@@ -381,7 +431,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://lisuibi.github.io/2019/12/16/%E6%80%BB%E7%BB%93%E4%B8%80%E4%BA%9B%E9%95%9C%E5%83%8F%E6%BA%90/" title="国内常用的镜像源" target="_blank" rel="external">https://lisuibi.github.io/2019/12/16/%E6%80%BB%E7%BB%93%E4%B8%80%E4%BA%9B%E9%95%9C%E5%83%8F%E6%BA%90/</a>
+      <a href="https://lisuibi.github.io/2019/12/26/win-%E5%AE%89%E8%A3%85mongodb/" title="win10 安装mongodb" target="_blank" rel="external">https://lisuibi.github.io/2019/12/26/win-%E5%AE%89%E8%A3%85mongodb/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -427,13 +477,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2019/12/26/win-%E5%AE%89%E8%A3%85mongodb/" title="win10 安装mongodb"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2019/12/15/VMware15%E5%AE%89%E8%A3%85centos7/" title="VMware15安装CentOS 7"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/12/16/%E6%80%BB%E7%BB%93%E4%B8%80%E4%BA%9B%E9%95%9C%E5%83%8F%E6%BA%90/" title="国内常用的镜像源"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
