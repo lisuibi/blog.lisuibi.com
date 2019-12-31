@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lisuibi.github.io/"/>
-  <updated>2019-12-30T08:27:51.339Z</updated>
+  <updated>2019-12-31T11:14:07.485Z</updated>
   <id>https://lisuibi.github.io/</id>
   
   <author>
@@ -17,11 +17,59 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用php sendmail插件定时发送天气预报提醒</title>
+    <link href="https://lisuibi.github.io/2019/12/31/%E4%BD%BF%E7%94%A8php-mail-%E5%87%BD%E6%95%B0%E5%AE%9A%E6%97%B6%E5%8F%91%E9%80%81%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5%E6%8F%90%E9%86%92/"/>
+    <id>https://lisuibi.github.io/2019/12/31/使用php-mail-函数定时发送天气预报提醒/</id>
+    <published>2019-12-31T05:32:00.000Z</published>
+    <updated>2019-12-31T11:14:07.485Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="闲来没事，就写了一个定时发送天气预报提醒到自己qq邮箱的功能。"><a href="#闲来没事，就写了一个定时发送天气预报提醒到自己qq邮箱的功能。" class="headerlink" title="闲来没事，就写了一个定时发送天气预报提醒到自己qq邮箱的功能。"></a>闲来没事，就写了一个定时发送天气预报提醒到自己qq邮箱的功能。</h4><p><font face="微软雅黑" size=4 color='red'>大概逻辑：通过天气接口<a href="https://www.tianqiapi.com/?action=v1" target="_blank" rel="noopener">(免费天气接口)</a>获取今日天气，处理好数据，最后通过mail()函数发送到邮箱（具体接口使用，自己看api文档）</font></p><h5 id="1、下载sendmail-zip。链接：http-glob-com-au-sendmail"><a href="#1、下载sendmail-zip。链接：http-glob-com-au-sendmail" class="headerlink" title="1、下载sendmail.zip。链接：http://glob.com.au/sendmail"></a>1、下载sendmail.zip。链接：<a href="http://glob.com.au/sendmail" target="_blank" rel="noopener">http://glob.com.au/sendmail</a></h5><p><img src="/images/20191231141915.png" alt=""></p><h5 id="2、下载完成，进行解压。-我是解压到D-sendmail，最好是短路径，长路径可能会出现问题"><a href="#2、下载完成，进行解压。-我是解压到D-sendmail，最好是短路径，长路径可能会出现问题" class="headerlink" title="2、下载完成，进行解压。(我是解压到D:\sendmail，最好是短路径，长路径可能会出现问题)"></a>2、下载完成，进行解压。(我是解压到D:\sendmail，最好是短路径，长路径可能会出现问题)</h5><p><img src="/images/20191231142037.png" alt=""></p><h5 id="3、配置php-ini"><a href="#3、配置php-ini" class="headerlink" title="3、配置php.ini"></a>3、配置php.ini</h5><p><img src="/images/20191231142720.png" alt=""></p><h5 id="4、配置sendmail-ini"><a href="#4、配置sendmail-ini" class="headerlink" title="4、配置sendmail.ini"></a>4、配置sendmail.ini</h5><p><img src="/images/20191231143018.png" alt=""></p><p><img src="/images/20191231144052.png" alt=""><br>qq邮箱授权码如何获取?<br>登录qq邮箱，进入账号,往下滑，就会看到<br><img src="/images/20191231143536.png" alt=""></p><p><img src="/images/20191231143641.png" alt=""><br>就获取到qq邮箱授权码了！</p><h5 id="5、重启apache"><a href="#5、重启apache" class="headerlink" title="5、重启apache"></a>5、重启apache</h5><h5 id="贴上代码："><a href="#贴上代码：" class="headerlink" title="贴上代码："></a>贴上代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">//获取天气预报</span><br><span class="line">$weather = file_get_contents(&quot;https://www.tianqiapi.com/api/?appid=33116163&amp;appsecret=s71cXjcw&amp;version=v1&quot;);</span><br><span class="line">$data = json_decode($weather,true);</span><br><span class="line">//发送的邮箱</span><br><span class="line">$to = &apos;1830442332@qq.com&apos;;    </span><br><span class="line">//邮件的标题</span><br><span class="line">$subject = &apos;天气预报提醒&apos;;    </span><br><span class="line">//邮件内容</span><br><span class="line">$message = $data[&apos;city&apos;].&quot;天气：\r\n&quot;.&quot;天气情况：&quot;.$data[&apos;data&apos;][0][&apos;wea&apos;].&quot;\r\n&quot;.&quot;今日温度：&quot;.$data[&apos;data&apos;][0][&apos;tem2&apos;].&quot;\r\n&quot;.&quot;当前温度：&quot;.$data[&apos;data&apos;][0][&apos;tem2&apos;].&quot;~&quot;.$data[&apos;data&apos;][0][&apos;tem1&apos;].&quot;\r\n&quot;.&quot;穿衣指数：&quot;.$data[&apos;data&apos;][0][&apos;index&apos;][3][&apos;desc&apos;].&quot;\r\n&quot;;</span><br><span class="line">$headers = &apos;From: lisuibi@foxmail.com&apos; . &quot;\r\n&quot; . &apos;Reply-To: lisuibi@foxmail.com&apos; . &quot;\r\n&quot;;</span><br><span class="line">$status = mail($to, $subject, $message, $headers);</span><br><span class="line">if($status)&#123;</span><br><span class="line">    echo &apos;发送邮件成功,时间为&apos;.date(&apos;Y-m-d H:i:s&apos;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    echo &apos;发送失败&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h5><p><img src="/images/20191231171428.png" alt=""><br><img src="/images/20191231171527.png" alt=""></p><h4 id="以上，就完成了sendmail插件发送天气预报。但是还有一个问题就是定时发送。"><a href="#以上，就完成了sendmail插件发送天气预报。但是还有一个问题就是定时发送。" class="headerlink" title="以上，就完成了sendmail插件发送天气预报。但是还有一个问题就是定时发送。"></a>以上，就完成了sendmail插件发送天气预报。但是还有一个问题就是定时发送。</h4><h5 id="我们使用win10的定时任务去完成！"><a href="#我们使用win10的定时任务去完成！" class="headerlink" title="我们使用win10的定时任务去完成！"></a>我们使用win10的定时任务去完成！</h5><h5 id="首先，新建一个bat文件。"><a href="#首先，新建一个bat文件。" class="headerlink" title="首先，新建一个bat文件。"></a>首先，新建一个bat文件。</h5><p>内容为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php php文件路径</span><br></pre></td></tr></table></figure><p>php为你配置的php环境变量（如果没配置就使用你php环境的绝对路径）</p><p>我的配置如下（具体看你实际路径）：</p><p><img src="/images/20191231172303.png" alt=""><br>bat文件创建成功！</p><h5 id="打开win10任务计划程序"><a href="#打开win10任务计划程序" class="headerlink" title="打开win10任务计划程序"></a>打开win10任务计划程序</h5><p><img src="/images/20191231172941.png" alt=""></p><p><img src="/images/20191231173035.png" alt=""></p><p><img src="/images/20191231173110.png" alt=""></p><p><img src="/images/20191231173223.png" alt=""></p><p><img src="/images/20191231173244.png" alt=""></p><p><img src="/images/20191231173652.png" alt=""></p><p><img src="/images/20191231173740.png" alt=""></p><p><img src="/images/20191231173830.png" alt=""></p><h4 id="大功告成！！！"><a href="#大功告成！！！" class="headerlink" title="大功告成！！！"></a>大功告成！！！</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;闲来没事，就写了一个定时发送天气预报提醒到自己qq邮箱的功能。&quot;&gt;&lt;a href=&quot;#闲来没事，就写了一个定时发送天气预报提醒到自己qq邮箱的功能。&quot; class=&quot;headerlink&quot; title=&quot;闲来没事，就写了一个定时发送天气预报提醒到自己qq邮箱的功能
+      
+    
+    </summary>
+    
+    
+      <category term="-php" scheme="https://lisuibi.github.io/categories/php/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>php基础知识</title>
+    <link href="https://lisuibi.github.io/2019/12/30/php%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>https://lisuibi.github.io/2019/12/30/php基础知识/</id>
+    <published>2019-12-30T11:17:00.000Z</published>
+    <updated>2019-12-31T05:34:11.027Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="php基础知识"><a href="#php基础知识" class="headerlink" title="php基础知识"></a>php基础知识</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$arr = array(&apos;a&apos;,3=&gt;&apos;b&apos;,2=&gt;&apos;c&apos;,&apos;d&apos;);</span><br><span class="line"></span><br><span class="line">请问如何访问到$arr数组的d？</span><br><span class="line"></span><br><span class="line">答案：$arr[4]</span><br><span class="line">&apos;d’为数组最大索引+1</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$var = false ? 1: false ? 2: 3</span><br><span class="line"></span><br><span class="line">求$var的值为多少？</span><br><span class="line"></span><br><span class="line">答案：3</span><br><span class="line">三目运算从左至右进行计算</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$a = array(</span><br><span class="line">    null =&gt; &apos;a&apos;,</span><br><span class="line">    true =&gt; &apos;b&apos;,</span><br><span class="line">    false =&gt; &apos;c&apos;,</span><br><span class="line">    0 =&gt; &apos;d&apos;,</span><br><span class="line">    1 =&gt; &apos;e&apos;,</span><br><span class="line">    &apos;&apos; =&gt; &apos;f&apos;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">求count($a)的值？</span><br><span class="line"></span><br><span class="line">答案：3 </span><br><span class="line">null，true，false会转为空字符</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;php基础知识&quot;&gt;&lt;a href=&quot;#php基础知识&quot; class=&quot;headerlink&quot; title=&quot;php基础知识&quot;&gt;&lt;/a&gt;php基础知识&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+      
+    
+    </summary>
+    
+    
+      <category term="-php" scheme="https://lisuibi.github.io/categories/php/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>redis 实现限流</title>
     <link href="https://lisuibi.github.io/2019/12/30/redis-%E5%AE%9E%E7%8E%B0%E9%99%90%E6%B5%81/"/>
     <id>https://lisuibi.github.io/2019/12/30/redis-实现限流/</id>
-    <published>2019-12-30T08:08:03.000Z</published>
-    <updated>2019-12-30T08:27:51.339Z</updated>
+    <published>2019-12-30T08:08:00.000Z</published>
+    <updated>2019-12-30T08:44:53.706Z</updated>
     
     <content type="html"><![CDATA[<h4 id="在家太无聊了，写一个redis实现限流，最主要功能实现用户10秒内只能请求5次。（都是些基础的东西）"><a href="#在家太无聊了，写一个redis实现限流，最主要功能实现用户10秒内只能请求5次。（都是些基础的东西）" class="headerlink" title="在家太无聊了，写一个redis实现限流，最主要功能实现用户10秒内只能请求5次。（都是些基础的东西）"></a>在家太无聊了，写一个redis实现限流，最主要功能实现用户10秒内只能请求5次。（都是些基础的东西）</h4><p><font face="微软雅黑" size=4 color='red'>大概逻辑：用户刷新一次页面，redis把当前时间推进list队列，队列设置过期时间为10秒。如果当前队列长度大于5，则判断当前时间减去最新推进队列的时间是否小于10，如果小于10，则请求频繁，请稍后再试。</font></p><p>贴上代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line"> * 实现限流功能</span><br><span class="line"> * 10秒内只能请求5次</span><br><span class="line"> */</span><br><span class="line">//连接redis服务器</span><br><span class="line">$redis = new redis();</span><br><span class="line">$redis-&gt;connect(&apos;127.0.0.1&apos;,6379);</span><br><span class="line"></span><br><span class="line">//获取客户端ip</span><br><span class="line">$ip = $_SERVER[&apos;REMOTE_ADDR&apos;];</span><br><span class="line">//设置次数</span><br><span class="line">$limit = 5;</span><br><span class="line"></span><br><span class="line">//判断当前ip的访问次数是否小于5</span><br><span class="line">if($redis-&gt;llen($ip)&lt;$limit)&#123;</span><br><span class="line">    //列表推进队列</span><br><span class="line">    $redis-&gt;lpush($ip,time());</span><br><span class="line">    //设置过期时间</span><br><span class="line">    $redis-&gt;expire($ip,10);</span><br><span class="line">    echo &apos;正常访问&apos;;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    //获取最新推进列表的时间</span><br><span class="line">    $lasttime = $redis-&gt;lIndex($ip,0);</span><br><span class="line">    //如果当前时间减去最后请求时间小于10秒，说明10秒时间还没过</span><br><span class="line">    if(time()-$lasttime&lt;20)&#123;</span><br><span class="line">        exit(&apos;请求频繁，请稍后重试&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;&lt;pre&gt;&quot;;</span><br><span class="line">var_dump($redis-&gt;lRange($ip,0,-1));</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -36,6 +84,8 @@
     
     
     
+      <category term="-redis" scheme="https://lisuibi.github.io/tags/redis/"/>
+    
   </entry>
   
   <entry>
@@ -43,22 +93,22 @@
     <link href="https://lisuibi.github.io/2019/12/26/win-%E5%AE%89%E8%A3%85mongodb/"/>
     <id>https://lisuibi.github.io/2019/12/26/win-安装mongodb/</id>
     <published>2019-12-26T01:36:00.000Z</published>
-    <updated>2019-12-26T05:59:35.944Z</updated>
+    <updated>2019-12-30T08:38:45.156Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="教程记录win安装mongodb"><a href="#教程记录win安装mongodb" class="headerlink" title="教程记录win安装mongodb"></a>教程记录win安装mongodb</h3><p>安装前先到mongodb官网下载mongodb,附上链接<a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">https://www.mongodb.com/download-center/community</a><br><img src="/images/20191226094024.png" alt=""></p><p>下载完成之后会得到一个mongodb的zip文件压缩包。</p><p>直接进行解压文件，我是解压到E:\mongodb。<br><img src="/images/20191226094649.png" alt=""></p><h3 id="创建数据目录-在当前mongodb安装目录键入cmd-："><a href="#创建数据目录-在当前mongodb安装目录键入cmd-：" class="headerlink" title="创建数据目录(在当前mongodb安装目录键入cmd)："></a>创建数据目录(在当前mongodb安装目录键入cmd)：</h3><p><img src="/images/20191226095508.png" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir data</span><br><span class="line">cd data</span><br><span class="line">mkdir db</span><br><span class="line">mkdir log</span><br></pre></td></tr></table></figure><p>附上图：</p><p><img src="/images/20191226100503.png" alt=""><br><img src="/images/20191226100543.png" alt=""></p><p>db用来保存数据库文件，log用来保存日志文件。</p><p>你也可以通过 window 的资源管理器中创建这些目录，而不一定通过命令行。</p><h3 id="新建mongo-conf："><a href="#新建mongo-conf：" class="headerlink" title="新建mongo.conf："></a>新建mongo.conf：</h3><p><img src="/images/20191226101953.png" alt=""><br>配置内容如下（具体路径根据自己创建的目录路径）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dbpath=E:\mongodb\data\db  </span><br><span class="line">logpath=E:\mongodb\data\log\mongodb.log</span><br></pre></td></tr></table></figure><p><img src="/images/20191226102143.png" alt=""></p><h3 id="启动MongoDB："><a href="#启动MongoDB：" class="headerlink" title="启动MongoDB："></a>启动MongoDB：</h3><p>切换到bin目录，键入cmd，输入：mongod –config “E:\mongodb\mongo.conf”</p><p>查看data目录和log目录是否有文件生成，如下则启动成功：<br><img src="/images/20191226102611.png" alt=""></p><p><img src="/images/20191226102636.png" alt=""></p><h3 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h3><p>打开浏览器，输入<a href="http://localhost:27017/，" target="_blank" rel="noopener">http://localhost:27017/，</a> 如下说明启动成功<br><img src="/images/20191226102857.png" alt=""></p><h3 id="连接："><a href="#连接：" class="headerlink" title="连接："></a>连接：</h3><p>在bin目录键入cmd，输入mongo<br><img src="/images/20191226103045.png" alt=""><br>连接成功后输入一些命令来查看：<br><img src="/images/20191226103301.png" alt=""></p><h3 id="作为系统服务："><a href="#作为系统服务：" class="headerlink" title="作为系统服务："></a>作为系统服务：</h3><p>以上启动服务器只是一次性的，当关闭了命令窗口，服务器就会关闭。可以将mongodb作为windows服务，然后通过命令控制来随时开启或关闭，以方便使用。</p><p>切换到bin目录，并以管理员身份运行，输入mongod –config “E:\mongodb\mongo.conf” –install –serviceName “mongodb”<br><img src="/images/20191226104128.png" alt=""><br>打开系统服务查看<br><img src="/images/20191226105925.png" alt=""></p><h3 id="通过win命令启动mongodb服务"><a href="#通过win命令启动mongodb服务" class="headerlink" title="通过win命令启动mongodb服务"></a>通过win命令启动mongodb服务</h3><p>确保是在管理员用户，切换到bin文件夹，输入：net stop mongodb，</p><p>等关闭完成：<br><img src="/images/20191226110347.png" alt=""></p><h3 id="配置环境变量-根据自己mongodb的bin目录路径"><a href="#配置环境变量-根据自己mongodb的bin目录路径" class="headerlink" title="配置环境变量(根据自己mongodb的bin目录路径)"></a>配置环境变量(根据自己mongodb的bin目录路径)</h3><p><img src="/images/20191226125812.png" alt=""></p><p><img src="/images/20191226130149.png" alt=""></p><p><img src="/images/20191226130248.png" alt=""></p><h3 id="编写bat文件用于启动和关闭mongodb服务"><a href="#编写bat文件用于启动和关闭mongodb服务" class="headerlink" title="编写bat文件用于启动和关闭mongodb服务"></a>编写bat文件用于启动和关闭mongodb服务</h3><p>新建startMongodb.bat和stopMongodb.bat文件<br><img src="/images/20191226130645.png" alt=""></p><p>startMongodb.bat中：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mongodb</span><br></pre></td></tr></table></figure><p>stopMongodb.bat中：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net stop mongodb</span><br></pre></td></tr></table></figure><h4 id="bat启动时："><a href="#bat启动时：" class="headerlink" title="bat启动时："></a>bat启动时：</h4><p>右键startMongodb.bat文件，以管理员身份运行</p><p><img src="/images/20190224163953229.png" alt=""></p><h4 id="bat关闭时"><a href="#bat关闭时" class="headerlink" title="bat关闭时:"></a>bat关闭时:</h4><p>右击stopMongodb.bat，以管理员运行：<br><img src="/images/20190224164057554.png" alt=""></p><p>以上就完成了！！奋斗吧，骚年！！</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="教程记录win10安装mongodb"><a href="#教程记录win10安装mongodb" class="headerlink" title="教程记录win10安装mongodb"></a>教程记录win10安装mongodb</h3><p>安装前先到mongodb官网下载mongodb,附上链接<a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">https://www.mongodb.com/download-center/community</a><br><img src="/images/20191226094024.png" alt=""></p><p>下载完成之后会得到一个mongodb的zip文件压缩包。</p><p>直接进行解压文件，我是解压到E:\mongodb。<br><img src="/images/20191226094649.png" alt=""></p><h3 id="创建数据目录-在当前mongodb安装目录键入cmd-："><a href="#创建数据目录-在当前mongodb安装目录键入cmd-：" class="headerlink" title="创建数据目录(在当前mongodb安装目录键入cmd)："></a>创建数据目录(在当前mongodb安装目录键入cmd)：</h3><p><img src="/images/20191226095508.png" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir data</span><br><span class="line">cd data</span><br><span class="line">mkdir db</span><br><span class="line">mkdir log</span><br></pre></td></tr></table></figure><p>附上图：</p><p><img src="/images/20191226100503.png" alt=""><br><img src="/images/20191226100543.png" alt=""></p><p>db用来保存数据库文件，log用来保存日志文件。</p><p>你也可以通过 window 的资源管理器中创建这些目录，而不一定通过命令行。</p><h3 id="新建mongo-conf："><a href="#新建mongo-conf：" class="headerlink" title="新建mongo.conf："></a>新建mongo.conf：</h3><p><img src="/images/20191226101953.png" alt=""><br>配置内容如下（具体路径根据自己创建的目录路径）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dbpath=E:\mongodb\data\db  </span><br><span class="line">logpath=E:\mongodb\data\log\mongodb.log</span><br></pre></td></tr></table></figure><p><img src="/images/20191226102143.png" alt=""></p><h3 id="启动MongoDB："><a href="#启动MongoDB：" class="headerlink" title="启动MongoDB："></a>启动MongoDB：</h3><p>切换到bin目录，键入cmd，输入：mongod –config “E:\mongodb\mongo.conf”</p><p>查看data目录和log目录是否有文件生成，如下则启动成功：<br><img src="/images/20191226102611.png" alt=""></p><p><img src="/images/20191226102636.png" alt=""></p><h3 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h3><p>打开浏览器，输入<a href="http://localhost:27017/，" target="_blank" rel="noopener">http://localhost:27017/，</a> 如下说明启动成功<br><img src="/images/20191226102857.png" alt=""></p><h3 id="连接："><a href="#连接：" class="headerlink" title="连接："></a>连接：</h3><p>在bin目录键入cmd，输入mongo<br><img src="/images/20191226103045.png" alt=""><br>连接成功后输入一些命令来查看：<br><img src="/images/20191226103301.png" alt=""></p><h3 id="作为系统服务："><a href="#作为系统服务：" class="headerlink" title="作为系统服务："></a>作为系统服务：</h3><p>以上启动服务器只是一次性的，当关闭了命令窗口，服务器就会关闭。可以将mongodb作为windows服务，然后通过命令控制来随时开启或关闭，以方便使用。</p><p>切换到bin目录，并以管理员身份运行，输入mongod –config “E:\mongodb\mongo.conf” –install –serviceName “mongodb”<br><img src="/images/20191226104128.png" alt=""><br>打开系统服务查看<br><img src="/images/20191226105925.png" alt=""></p><h3 id="通过win命令启动mongodb服务"><a href="#通过win命令启动mongodb服务" class="headerlink" title="通过win命令启动mongodb服务"></a>通过win命令启动mongodb服务</h3><p>确保是在管理员用户，切换到bin文件夹，输入：net stop mongodb，</p><p>等关闭完成：<br><img src="/images/20191226110347.png" alt=""></p><h3 id="配置环境变量-根据自己mongodb的bin目录路径"><a href="#配置环境变量-根据自己mongodb的bin目录路径" class="headerlink" title="配置环境变量(根据自己mongodb的bin目录路径)"></a>配置环境变量(根据自己mongodb的bin目录路径)</h3><p><img src="/images/20191226125812.png" alt=""></p><p><img src="/images/20191226130149.png" alt=""></p><p><img src="/images/20191226130248.png" alt=""></p><h3 id="编写bat文件用于启动和关闭mongodb服务"><a href="#编写bat文件用于启动和关闭mongodb服务" class="headerlink" title="编写bat文件用于启动和关闭mongodb服务"></a>编写bat文件用于启动和关闭mongodb服务</h3><p>新建startMongodb.bat和stopMongodb.bat文件<br><img src="/images/20191226130645.png" alt=""></p><p>startMongodb.bat中：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mongodb</span><br></pre></td></tr></table></figure><p>stopMongodb.bat中：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net stop mongodb</span><br></pre></td></tr></table></figure><h4 id="bat启动时："><a href="#bat启动时：" class="headerlink" title="bat启动时："></a>bat启动时：</h4><p>右键startMongodb.bat文件，以管理员身份运行</p><p><img src="/images/20190224163953229.png" alt=""></p><h4 id="bat关闭时"><a href="#bat关闭时" class="headerlink" title="bat关闭时:"></a>bat关闭时:</h4><p>右击stopMongodb.bat，以管理员运行：<br><img src="/images/20190224164057554.png" alt=""></p><p>以上就完成了！！奋斗吧，骚年！！</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;教程记录win安装mongodb&quot;&gt;&lt;a href=&quot;#教程记录win安装mongodb&quot; class=&quot;headerlink&quot; title=&quot;教程记录win安装mongodb&quot;&gt;&lt;/a&gt;教程记录win安装mongodb&lt;/h3&gt;&lt;p&gt;安装前先到mongodb官网
+        &lt;h3 id=&quot;教程记录win10安装mongodb&quot;&gt;&lt;a href=&quot;#教程记录win10安装mongodb&quot; class=&quot;headerlink&quot; title=&quot;教程记录win10安装mongodb&quot;&gt;&lt;/a&gt;教程记录win10安装mongodb&lt;/h3&gt;&lt;p&gt;安装前先到m
       
     
     </summary>
     
     
     
-      <category term="-php" scheme="https://lisuibi.github.io/tags/php/"/>
+      <category term="-数据库" scheme="https://lisuibi.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -67,7 +117,7 @@
     <link href="https://lisuibi.github.io/2019/12/16/%E6%80%BB%E7%BB%93%E4%B8%80%E4%BA%9B%E9%95%9C%E5%83%8F%E6%BA%90/"/>
     <id>https://lisuibi.github.io/2019/12/16/总结一些镜像源/</id>
     <published>2019-12-16T01:54:00.000Z</published>
-    <updated>2019-12-16T02:03:41.872Z</updated>
+    <updated>2019-12-30T08:44:04.213Z</updated>
     
     <content type="html"><![CDATA[<h3 id="总结一些国内的镜像源，方便以后使用"><a href="#总结一些国内的镜像源，方便以后使用" class="headerlink" title="总结一些国内的镜像源，方便以后使用"></a>总结一些国内的镜像源，方便以后使用</h3><h4 id="清华大学镜像站-https-mirrors-tuna-tsinghua-edu-cn"><a href="#清华大学镜像站-https-mirrors-tuna-tsinghua-edu-cn" class="headerlink" title="清华大学镜像站: https://mirrors.tuna.tsinghua.edu.cn"></a>清华大学镜像站: <a href="https://mirrors.tuna.tsinghua.edu.cn" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn</a></h4><h4 id="网易云镜像站：http-mirrors-163-com"><a href="#网易云镜像站：http-mirrors-163-com" class="headerlink" title="网易云镜像站：http://mirrors.163.com"></a>网易云镜像站：<a href="http://mirrors.163.com" target="_blank" rel="noopener">http://mirrors.163.com</a></h4><h4 id="腾讯镜像站：https-mirrors-cloud-tencent-com"><a href="#腾讯镜像站：https-mirrors-cloud-tencent-com" class="headerlink" title="腾讯镜像站：https://mirrors.cloud.tencent.com"></a>腾讯镜像站：<a href="https://mirrors.cloud.tencent.com" target="_blank" rel="noopener">https://mirrors.cloud.tencent.com</a></h4><h4 id="阿里镜像站：-https-developer-aliyun-com-mirror"><a href="#阿里镜像站：-https-developer-aliyun-com-mirror" class="headerlink" title="阿里镜像站： https://developer.aliyun.com/mirror"></a>阿里镜像站： <a href="https://developer.aliyun.com/mirror" target="_blank" rel="noopener">https://developer.aliyun.com/mirror</a></h4><h4 id="以上镜像源，首选网易和阿里云，相对稳定！！"><a href="#以上镜像源，首选网易和阿里云，相对稳定！！" class="headerlink" title="以上镜像源，首选网易和阿里云，相对稳定！！"></a>以上镜像源，首选网易和阿里云，相对稳定！！</h4>]]></content>
     
@@ -82,7 +132,7 @@
     
     
     
-      <category term="其它" scheme="https://lisuibi.github.io/tags/%E5%85%B6%E5%AE%83/"/>
+      <category term="-其它" scheme="https://lisuibi.github.io/tags/%E5%85%B6%E5%AE%83/"/>
     
   </entry>
   
@@ -91,7 +141,7 @@
     <link href="https://lisuibi.github.io/2019/12/15/VMware15%E5%AE%89%E8%A3%85centos7/"/>
     <id>https://lisuibi.github.io/2019/12/15/VMware15安装centos7/</id>
     <published>2019-12-15T09:58:00.000Z</published>
-    <updated>2019-12-16T01:53:53.289Z</updated>
+    <updated>2019-12-30T08:44:28.945Z</updated>
     
     <content type="html"><![CDATA[<h4 id="本篇文章记录vmware15安装CentOS7"><a href="#本篇文章记录vmware15安装CentOS7" class="headerlink" title="本篇文章记录vmware15安装CentOS7"></a>本篇文章记录vmware15安装CentOS7</h4><h5 id="今天刚开始是用win10自带的hyper安装CentOS7，中途遇到一点问题，就打算用VM15安装CentOS7。记录一下，免得下次掉坑。"><a href="#今天刚开始是用win10自带的hyper安装CentOS7，中途遇到一点问题，就打算用VM15安装CentOS7。记录一下，免得下次掉坑。" class="headerlink" title="今天刚开始是用win10自带的hyper安装CentOS7，中途遇到一点问题，就打算用VM15安装CentOS7。记录一下，免得下次掉坑。"></a>今天刚开始是用win10自带的hyper安装CentOS7，中途遇到一点问题，就打算用VM15安装CentOS7。记录一下，免得下次掉坑。</h5><p>1.首先安装VM15，这里我把安装包放到了百度网盘里，大家可以直接下载！<br>链接：<a href="https://pan.baidu.com/s/1Jro9KzkRfDIDd2SnDFMqcw" target="_blank" rel="noopener">https://pan.baidu.com/s/1Jro9KzkRfDIDd2SnDFMqcw</a><br>提取码：mnpa</p><p>2.下载CentOS7镜像文件，我是到网易云镜像站下载的。<br>链接：<a href="http://mirrors.163.com/centos/7/isos/x86_64" target="_blank" rel="noopener">http://mirrors.163.com/centos/7/isos/x86_64</a><br>下面有很多版本，我下载的是CentOS-7-x86_64-Minimal-1908版本（具体版本区别自行百度）：<br><img src="/images/20191215180454.png" alt=""></p><p>3.VM15创建虚拟机<br><img src="/images/20191215180948.png" alt=""></p><p><img src="/images/20191215181033.png" alt=""></p><p><img src="/images/20191215181235.png" alt=""></p><p><img src="/images/20191215181416.png" alt=""></p><p><img src="/images/20191215181533.png" alt=""></p><p><img src="/images/20191215181716.png" alt=""></p><p><img src="/images/20191215182303.png" alt=""></p><p><img src="/images/20191215182556.png" alt=""><br>到这里，虚拟机就配置好了（可能有些还需要配置一些东西）<br>现在我们开启此虚拟机，一般第一次等待时间比较长，后续就不会这样了。<br><img src="/images/20191215182712.png" alt=""></p><p>4.CentOS 7 安装</p><ol><li><p>选择 Install CentOS 7， 等待系统安装.</p><p><img src="/images/20190117202426317.png" alt=""></p></li><li><p>选择语言 可以选择中文</p><p><img src="/images/20190117202434646.png" alt=""></p></li><li><p>加载一会后， 点击 软件选择。我安装的Minimal版本是没有选择的。</p><p><img src="/images/20190117202447619.png" alt=""></p></li><li><p>设置ROOT密码. 漫长的等待期… 等待后 重启就可以使用你的CentOS了<br><img src="/images/20190117202502573.png" alt=""></p><p><img src="/images/2019011720251619.png" alt=""></p><p><img src="/images/20191215191839.png" alt=""></p><p>到这里，CentOS7就安装好了…..<br><img src="/images/3279339690.jpg" alt=""></p></li></ol>]]></content>
     
@@ -106,7 +156,7 @@
     
     
     
-      <category term="linux" scheme="https://lisuibi.github.io/tags/linux/"/>
+      <category term="-linux" scheme="https://lisuibi.github.io/tags/linux/"/>
     
   </entry>
   
@@ -167,7 +217,7 @@
     <link href="https://lisuibi.github.io/2019/07/28/phpstudy2018-%E5%AE%89%E8%A3%85redis%E6%8B%93%E5%B1%95/"/>
     <id>https://lisuibi.github.io/2019/07/28/phpstudy2018-安装redis拓展/</id>
     <published>2019-07-28T05:26:00.000Z</published>
-    <updated>2019-11-01T13:22:23.358Z</updated>
+    <updated>2019-12-30T08:37:27.062Z</updated>
     
     <content type="html"><![CDATA[<h4 id="本篇博文使用phpstudy2018安装redis拓展"><a href="#本篇博文使用phpstudy2018安装redis拓展" class="headerlink" title="本篇博文使用phpstudy2018安装redis拓展"></a>本篇博文使用phpstudy2018安装redis拓展</h4><p>phpstudy 安装redis拓展，首先要在php-redis官网下载库文件，<a href="http://pecl.php.net/package/redis" target="_blank" rel="noopener">http://pecl.php.net/package/redis</a> </p><p><img src="/images/20190728144712.png" alt=""></p><p>windows系统点击右边的DLL进行下载，当前我选择的版本是5.0.1</p><p><img src="/images/20190728145314.png" alt=""><br>注意注意(别踩坑)：<br>通过phpinfo()查看自己的php版本（根据自己的php环境版本下载对应的redis库文件）：<br><img src="/images/20190728145728.png" alt=""></p><p>我当前是version 7.1.13 Architecture为x86，那么我应该下载对应php 7.1 的x86版本的redis库文件：<br><img src="/images/20190728150134.png" alt=""></p><p>下载解压，将php_redis.pdb，php_redis.dll两个文件放入对应php版本中的ext文件夹中：<br><img src="/images/20190728150537.png" alt=""></p><p>修改php.ini配置文件：<br><img src="/images/20190728150825.png" alt=""></p><p>完成之后，重启phpstudy；<br>phpinfo()，如果出现redis如图，那么就安装完成：<br><img src="/images/20190728151113.png" alt=""></p><p>大功告成，奋斗吧，骚年！！<br><img src="/images/46.jpg" alt=""></p>]]></content>
     
@@ -182,7 +232,7 @@
     
     
     
-      <category term="-php" scheme="https://lisuibi.github.io/tags/php/"/>
+      <category term="-redis" scheme="https://lisuibi.github.io/tags/redis/"/>
     
   </entry>
   
