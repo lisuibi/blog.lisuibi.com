@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lisuibi.github.io/"/>
-  <updated>2020-03-12T14:29:12.968Z</updated>
+  <updated>2020-03-12T16:10:16.071Z</updated>
   <id>https://lisuibi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lisuibi.github.io/2020/03/12/The-router-is-slow-Do-you-know-Why/"/>
     <id>https://lisuibi.github.io/2020/03/12/The-router-is-slow-Do-you-know-Why/</id>
     <published>2020-03-12T13:35:00.000Z</published>
-    <updated>2020-03-12T14:29:12.968Z</updated>
+    <updated>2020-03-12T16:10:16.071Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="好久没发博客了，今天发一篇关于路由器的。不知大家可否感兴趣！"><a href="#好久没发博客了，今天发一篇关于路由器的。不知大家可否感兴趣！" class="headerlink" title="好久没发博客了，今天发一篇关于路由器的。不知大家可否感兴趣！"></a>好久没发博客了，今天发一篇关于路由器的。不知大家可否感兴趣！</h4><h3 id="为什么你的无线路由器网速慢"><a href="#为什么你的无线路由器网速慢" class="headerlink" title="为什么你的无线路由器网速慢?"></a>为什么你的无线路由器网速慢?</h3><p>网速计算公式：几兆宽带  ÷ 8 = （）Mb/s</p><p>200M宽带 ÷ 8 = 25Mb/s</p><h4 id="但是有时候真的家里的网络能达到那么快吗？？"><a href="#但是有时候真的家里的网络能达到那么快吗？？" class="headerlink" title="但是有时候真的家里的网络能达到那么快吗？？"></a>但是有时候真的家里的网络能达到那么快吗？？</h4><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/87RibYZ0JlcxoW3YXyExf2MLH7UbDuZSeXEEic0m2cKTibubIicBALezEJBOewulNPKUP6OUYzkLYRw5BrkWYvxrpg/640?wx_fmt=jpeg" alt="img"></p><p>可能是以下硬件造成的问题，这样操作可极大提高网速。</p><h4 id="1、光猫问题"><a href="#1、光猫问题" class="headerlink" title="1、光猫问题"></a>1、光猫问题</h4><p>目前的光猫一般有4个端口，3个百兆口和一个千兆口。光纤接入光猫光口，建议超过100mb的宽带，无线路由器插入光猫千兆口，更有利于网速的提升。其它百兆口的可用于网线连接电脑或者ITV。</p><h4 id="2、路由器问题"><a href="#2、路由器问题" class="headerlink" title="2、路由器问题"></a>2、路由器问题</h4><h5 id="购买无线路由器时要注意区分是百兆路由器还是千兆路由器。"><a href="#购买无线路由器时要注意区分是百兆路由器还是千兆路由器。" class="headerlink" title="购买无线路由器时要注意区分是百兆路由器还是千兆路由器。"></a>购买无线路由器时要注意区分是百兆路由器还是千兆路由器。</h5><ul><li>千兆路由器：指有限端口的速率为千兆（1000Mbps）的路由器。</li><li>百兆路由器：指有线端口的速率为百兆（100Mbps）的路由器。</li></ul><p>路由器的转发性能受限于有线端口的速率，百兆路由器的转发性能只能达到百兆，因此超过100M的宽带建议使用千兆路由器，更有利于发挥出宽带的性能。</p><h4 id="3、网线问题"><a href="#3、网线问题" class="headerlink" title="3、网线问题"></a>3、网线问题</h4><h5 id="网线分类"><a href="#网线分类" class="headerlink" title="网线分类"></a>网线分类</h5><ul><li><p>五类网线   标识”CAT5”，带宽100M，适用于百兆以下的网络。</p></li><li><p>超五类网线  标识”CAT5E”,  带宽155M。</p></li><li><p>六类网线  标识”CAT6”，带宽250M，用于架设千兆网。</p></li><li><p>超六类网线  标识”CAT6A”，带宽550M，适用于万兆网。</p></li></ul><p>建议：宽带超过100M，建议使用光纤插入光猫的千兆口，使用六类网线将千兆路由器接入光猫，网络这样布局更有利于网速的提升！</p><p>大家可以尝试尝试！</p><p>​    </p><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/87RibYZ0JlcxoW3YXyExf2MLH7UbDuZSeA38W5nPu69ia6p73GVyKgqwbx9yeN1paK9icMRh5xulDBGX4P9r6oLMA/640?wx_fmt=jpeg" alt="img"></p>]]></content>
     
@@ -35,6 +35,8 @@
     </summary>
     
     
+    
+      <category term="路由器" scheme="https://lisuibi.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
     
   </entry>
   
