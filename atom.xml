@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lisuibi.github.io/"/>
-  <updated>2020-04-08T09:24:15.932Z</updated>
+  <updated>2020-04-08T09:34:47.928Z</updated>
   <id>https://lisuibi.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>油猴+百度网盘直链下载助手+IDM</title>
+    <link href="https://lisuibi.github.io/2020/04/08/baiducloud-IDM/"/>
+    <id>https://lisuibi.github.io/2020/04/08/baiducloud-IDM/</id>
+    <published>2020-04-08T09:28:00.000Z</published>
+    <updated>2020-04-08T09:34:47.928Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><font size='4'><strong>百度网盘下载龟速，今天用油猴+百度网盘直链下载助手+IDM实现高速下载！！</strong> </font>  </p><blockquote><p>油猴：油猴脚本是一款免费的浏览器扩展和最为流行的用户脚本管理器，它适用于 Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。 </p></blockquote><blockquote><p>百度网盘直链下载助手：油猴脚本是一款免费的浏览器扩展和最为流行的用户脚本管理器，它适用于 Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。 </p></blockquote><p> <font size='3'>1. 首先谷歌浏览器安装油猴拓展，可以在chrome 网上应用店下载安装</font><br> <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9iZG4uMTM1ZWRpdG9yLmNvbS9maWxlcy91c2Vycy84MjAvODIwNDE0Ni8yMDIwMDMveFNEZmF6ajJfTVp1Ny5wbmc?x-oss-process=image/format,png" alt="image.png"></p><p> <font size='3'>2. 其次，安装“百度网盘直链下载助手”, 直接访问         <a href="https://github.com/syhyz1990/baiduyun" target="_blank" rel="noopener">https://github.com/syhyz1990/baiduyun</a> 有相关的安装文档</font><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9iZG4uMTM1ZWRpdG9yLmNvbS9maWxlcy91c2Vycy84MjAvODIwNDE0Ni8yMDIwMDMvVERISXZ2UGtfWXpFVi5wbmc?x-oss-process=image/format,png" alt="image.png"></p><p> <font size='4'>安装成功效果：</font><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9iZG4uMTM1ZWRpdG9yLmNvbS9maWxlcy91c2Vycy84MjAvODIwNDE0Ni8yMDIwMDMvWUpDd3QyeEFfYXdCUy5wbmc?x-oss-process=image/format,png" alt="image.png"></p><p> <font size='3'>3. 安装IDM</font></p><p>关注  <strong>“PHP萌新”</strong> 公众号回复：“IDM下载神器” 即可获取IDM破解版</p><p> <font size='3'>4. 使用</font></p><p>浏览器打开分享的百度网盘资源链接：</p><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9iZG4uMTM1ZWRpdG9yLmNvbS9maWxlcy91c2Vycy84MjAvODIwNDE0Ni8yMDIwMDMvUEFldU1nZWJfUUZ6Ui5wbmc?x-oss-process=image/format,png" alt="image.png"></p><p> 点击直接下载，弹出IDM下载文件。浏览器必须安装IDM插件<br> <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9iZG4uMTM1ZWRpdG9yLmNvbS9maWxlcy91c2Vycy84MjAvODIwNDE0Ni8yMDIwMDMvanpnRnQ1UXNfcTV6aC5wbmc?x-oss-process=image/format,png" alt="image.png"></p><p><font size='4'>就这么简单完成，觉得本文对你有用，欢迎关注！！</font></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+      <category term="-其它" scheme="https://lisuibi.github.io/tags/%E5%85%B6%E5%AE%83/"/>
+    
+  </entry>
   
   <entry>
     <title>宝塔面板部署TP5项目</title>
