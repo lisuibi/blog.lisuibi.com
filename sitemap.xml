@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lisuibi.github.io/2020/06/08/centos7-2-Installing-the-PHP-environment/</loc>
+    
+    <lastmod>2020-06-08T04:48:47.444Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lisuibi.github.io/2020/04/08/baiducloud-IDM/</loc>
     
-    <lastmod>2020-04-08T09:34:47.928Z</lastmod>
+    <lastmod>2020-06-08T03:49:56.117Z</lastmod>
     
   </url>
   
@@ -142,14 +149,14 @@
   </url>
   
   <url>
-    <loc>https://lisuibi.github.io/archives/2019/07/index.html</loc>
+    <loc>https://lisuibi.github.io/archives/2019/10/index.html</loc>
     
     <lastmod>2019-10-30T01:05:18.979Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lisuibi.github.io/archives/2019/10/index.html</loc>
+    <loc>https://lisuibi.github.io/archives/2019/07/index.html</loc>
     
     <lastmod>2019-10-30T01:05:18.979Z</lastmod>
     

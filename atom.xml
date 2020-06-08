@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lisuibi.github.io/"/>
-  <updated>2020-04-08T09:34:47.928Z</updated>
+  <updated>2020-06-08T04:48:47.444Z</updated>
   <id>https://lisuibi.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>centos7.2 安装php+apache+mysql</title>
+    <link href="https://lisuibi.github.io/2020/06/08/centos7-2-Installing-the-PHP-environment/"/>
+    <id>https://lisuibi.github.io/2020/06/08/centos7-2-Installing-the-PHP-environment/</id>
+    <published>2020-06-08T03:47:00.000Z</published>
+    <updated>2020-06-08T04:48:47.444Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文主要记录下centos7.2 安装php+apache+mysql。就是所谓的lamp。</p><p><font size=5>1、首先安装apache</font></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install httpd</span><br></pre></td></tr></table></figure><p>配置ServerName，进入httpd.conf文件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/httpd/conf/httpd.conf</span><br></pre></td></tr></table></figure><p>将#ServerName <a href="http://www.example.com:80修改为ServerName" target="_blank" rel="noopener">www.example.com:80修改为ServerName</a> localhost:80</p><p>apache 默认使用的是80端口。</p><p><font color="red" size='5'>各大云服务器需要在安全组配置80端口</font></p><p>启动apache:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start httpd.service</span><br></pre></td></tr></table></figure><p>添加到开机启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable httpd.service</span><br></pre></td></tr></table></figure><p><font size=5>2、安装mysql</font></p><p>安装mysql服务</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y mariadb-server</span><br></pre></td></tr></table></figure><p>启动mysql服务</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mariadb.service</span><br></pre></td></tr></table></figure><p>添加到开机启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable mariadb.service</span><br></pre></td></tr></table></figure><p><font size=5>3、安装php</font></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install php php-devel</span><br></pre></td></tr></table></figure><p>重启apache让php生效</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart httpd.service</span><br></pre></td></tr></table></figure><p>此时可以在目录：/var/www/html/下建立一个PHP文件</p><p>代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php phpinfo(); ?&gt;</span><br></pre></td></tr></table></figure><p>在浏览器中访问这个文件，就能看到PHP的相关信息</p><p>安装php拓展</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install php-mysql php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc</span><br></pre></td></tr></table></figure><p>安装完扩展之后需要再次重启apache</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart httpd.service</span><br></pre></td></tr></table></figure><p>来一波，php连接mysql代码： 放在/var/www/html</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$conn = new mysqli(&apos;127.0.0.1&apos;,&apos;root&apos;,&apos;&apos;);</span><br><span class="line">if($conn-&gt;connect_error) &#123;</span><br><span class="line">        die(&apos;连接失败&apos;.$conn-&gt;connect_error);</span><br><span class="line">&#125;</span><br><span class="line">echo &apos;连接成功&apos;;</span><br></pre></td></tr></table></figure><p><font size=4>连接成功，php环境安装完成</p><p>备注：Apache默认配置文件路径：<br>网站的根目录指向/var/www/html 目录<br>主配置文件是/etc/httpd/conf/httpd.conf<br>存储在的/etc/httpd/conf.d/目录</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>油猴+百度网盘直链下载助手+IDM</title>
     <link href="https://lisuibi.github.io/2020/04/08/baiducloud-IDM/"/>
     <id>https://lisuibi.github.io/2020/04/08/baiducloud-IDM/</id>
     <published>2020-04-08T09:28:00.000Z</published>
-    <updated>2020-04-08T09:34:47.928Z</updated>
+    <updated>2020-06-08T03:49:56.117Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><font size='4'><strong>百度网盘下载龟速，今天用油猴+百度网盘直链下载助手+IDM实现高速下载！！</strong> </font>  </p><blockquote><p>油猴：油猴脚本是一款免费的浏览器扩展和最为流行的用户脚本管理器，它适用于 Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。 </p></blockquote><blockquote><p>百度网盘直链下载助手：油猴脚本是一款免费的浏览器扩展和最为流行的用户脚本管理器，它适用于 Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。 </p></blockquote><p> <font size='3'>1. 首先谷歌浏览器安装油猴拓展，可以在chrome 网上应用店下载安装</font><br> <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9iZG4uMTM1ZWRpdG9yLmNvbS9maWxlcy91c2Vycy84MjAvODIwNDE0Ni8yMDIwMDMveFNEZmF6ajJfTVp1Ny5wbmc?x-oss-process=image/format,png" alt="image.png"></p><p> <font size='3'>2. 其次，安装“百度网盘直链下载助手”, 直接访问         <a href="https://github.com/syhyz1990/baiduyun" target="_blank" rel="noopener">https://github.com/syhyz1990/baiduyun</a> 有相关的安装文档</font><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9iZG4uMTM1ZWRpdG9yLmNvbS9maWxlcy91c2Vycy84MjAvODIwNDE0Ni8yMDIwMDMvVERISXZ2UGtfWXpFVi5wbmc?x-oss-process=image/format,png" alt="image.png"></p><p> <font size='4'>安装成功效果：</font><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9iZG4uMTM1ZWRpdG9yLmNvbS9maWxlcy91c2Vycy84MjAvODIwNDE0Ni8yMDIwMDMvWUpDd3QyeEFfYXdCUy5wbmc?x-oss-process=image/format,png" alt="image.png"></p><p> <font size='3'>3. 安装IDM</font></p><p>关注  <strong>“PHP萌新”</strong> 公众号回复：“IDM下载神器” 即可获取IDM破解版</p><p> <font size='3'>4. 使用</font></p><p>浏览器打开分享的百度网盘资源链接：</p><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9iZG4uMTM1ZWRpdG9yLmNvbS9maWxlcy91c2Vycy84MjAvODIwNDE0Ni8yMDIwMDMvUEFldU1nZWJfUUZ6Ui5wbmc?x-oss-process=image/format,png" alt="image.png"></p><p> 点击直接下载，弹出IDM下载文件。浏览器必须安装IDM插件<br> <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9iZG4uMTM1ZWRpdG9yLmNvbS9maWxlcy91c2Vycy84MjAvODIwNDE0Ni8yMDIwMDMvanpnRnQ1UXNfcTV6aC5wbmc?x-oss-process=image/format,png" alt="image.png"></p><p><font size='4'>就这么简单完成，觉得本文对你有用，欢迎关注！！</font></p>]]></content>
     
