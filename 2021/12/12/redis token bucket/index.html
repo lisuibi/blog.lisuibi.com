@@ -21,18 +21,18 @@
   <meta name="description" content="本文介绍PHP基于Redis使用令牌桶算法实现限流！ 相信大家都知道为什么要做限流，为了保证服务不中断，防止down机，就需要拒绝多余的请求。例如：服务器只能抗1000qps，但这时来了很大的流量，导致服务器瞬间压力飙升，使系统超负荷工作。 我们在业务层面进行限流，减轻服务器压力。 令牌桶算法令牌桶中有初始令牌数，每来一个请求从桶中获取一个令牌，并且在一定时间间隔中可以生成令牌，多余的令牌被丢弃。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP基于Redis使用令牌桶算法实现限流">
-<meta property="og:url" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;2021&#x2F;12&#x2F;12&#x2F;PHP%E5%9F%BA%E4%BA%8ERedis%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E9%99%90%E6%B5%81&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;2021&#x2F;12&#x2F;12&#x2F;redis%20token%20bucket&#x2F;index.html">
 <meta property="og:site_name" content="致梦de博客">
 <meta property="og:description" content="本文介绍PHP基于Redis使用令牌桶算法实现限流！ 相信大家都知道为什么要做限流，为了保证服务不中断，防止down机，就需要拒绝多余的请求。例如：服务器只能抗1000qps，但这时来了很大的流量，导致服务器瞬间压力飙升，使系统超负荷工作。 我们在业务层面进行限流，减轻服务器压力。 令牌桶算法令牌桶中有初始令牌数，每来一个请求从桶中获取一个令牌，并且在一定时间间隔中可以生成令牌，多余的令牌被丢弃。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;d8fb028c3e1c48d0921b2fb522e1b20c.png?x-oss-process=image&#x2F;watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlzdWliaQ==,size_20,color_FFFFFF,t_70,g_se,x_16">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;f85d41982b224dec934b7cdd83d1f547.png?x-oss-process=image&#x2F;watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlzdWliaQ==,size_20,color_FFFFFF,t_70,g_se,x_16">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;61b654f72e714405a1bdb6abbc65b9c0.png?x-oss-process=image&#x2F;watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlzdWliaQ==,size_20,color_FFFFFF,t_70,g_se,x_16">
-<meta property="og:updated_time" content="2021-12-12T08:27:13.122Z">
+<meta property="og:updated_time" content="2021-12-12T08:30:40.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;d8fb028c3e1c48d0921b2fb522e1b20c.png?x-oss-process=image&#x2F;watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGlzdWliaQ==,size_20,color_FFFFFF,t_70,g_se,x_16">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://lisuibi.github.io/2021/12/12/PHP%E5%9F%BA%E4%BA%8ERedis%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E9%99%90%E6%B5%81/index.html">
+  <link rel="canonical" href="https://lisuibi.github.io/2021/12/12/redis%20token%20bucket/index.html">
   
     <link rel="alternate" href="/atom.xml" title="致梦de博客" type="application/atom+xml">
   
@@ -252,7 +252,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2021/12/12/PHP%E5%9F%BA%E4%BA%8ERedis%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E9%99%90%E6%B5%81/" class="title">PHP基于Redis使用令牌桶算法实现限流</a>
+                <a href="/2021/12/12/redis%20token%20bucket/" class="title">PHP基于Redis使用令牌桶算法实现限流</a>
               </p>
               <p class="item-date">
                 <time datetime="2021-12-12T08:23:18.000Z" itemprop="datePublished">2021-12-12</time>
@@ -333,7 +333,7 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PHP基于Redis使用令牌桶算法实现限流" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-redis token bucket" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
@@ -348,14 +348,14 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/12/PHP%E5%9F%BA%E4%BA%8ERedis%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E9%99%90%E6%B5%81/" class="article-date">
+	<a href="/2021/12/12/redis%20token%20bucket/" class="article-date">
 	  <time datetime="2021-12-12T08:23:18.000Z" itemprop="datePublished">2021-12-12</time>
 	</a>
 </span>
         
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/12/PHP%E5%9F%BA%E4%BA%8ERedis%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E9%99%90%E6%B5%81/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/12/redis%20token%20bucket/#comments" class="article-comment-link">评论</a></span>
         
 	
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 861(字)</span>
@@ -396,7 +396,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://lisuibi.github.io/2021/12/12/PHP%E5%9F%BA%E4%BA%8ERedis%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E9%99%90%E6%B5%81/" title="PHP基于Redis使用令牌桶算法实现限流" target="_blank" rel="external">https://lisuibi.github.io/2021/12/12/PHP%E5%9F%BA%E4%BA%8ERedis%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E9%99%90%E6%B5%81/</a>
+      <a href="https://lisuibi.github.io/2021/12/12/redis%20token%20bucket/" title="PHP基于Redis使用令牌桶算法实现限流" target="_blank" rel="external">https://lisuibi.github.io/2021/12/12/redis%20token%20bucket/</a>
     </li>
     
     <li class="post-copyright-license">
