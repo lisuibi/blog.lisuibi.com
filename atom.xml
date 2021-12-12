@@ -5,9 +5,9 @@
   <subtitle>学习</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://lisuibi.github.io/"/>
+  <link href="https://blog.lisuibi.com/"/>
   <updated>2021-12-12T08:30:40.959Z</updated>
-  <id>https://lisuibi.github.io/</id>
+  <id>https://blog.lisuibi.com/</id>
   
   <author>
     <name>致梦</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>PHP基于Redis使用令牌桶算法实现限流</title>
-    <link href="https://lisuibi.github.io/2021/12/12/redis%20token%20bucket/"/>
-    <id>https://lisuibi.github.io/2021/12/12/redis token bucket/</id>
+    <link href="https://blog.lisuibi.com/2021/12/12/redis%20token%20bucket/"/>
+    <id>https://blog.lisuibi.com/2021/12/12/redis token bucket/</id>
     <published>2021-12-12T08:23:18.000Z</published>
     <updated>2021-12-12T08:30:40.959Z</updated>
     
@@ -40,8 +40,8 @@
   
   <entry>
     <title>centos7.2 安装php+apache+mysql</title>
-    <link href="https://lisuibi.github.io/2020/06/08/centos7-2-Installing-the-PHP-environment/"/>
-    <id>https://lisuibi.github.io/2020/06/08/centos7-2-Installing-the-PHP-environment/</id>
+    <link href="https://blog.lisuibi.com/2020/06/08/centos7-2-Installing-the-PHP-environment/"/>
+    <id>https://blog.lisuibi.com/2020/06/08/centos7-2-Installing-the-PHP-environment/</id>
     <published>2020-06-08T03:47:00.000Z</published>
     <updated>2020-06-08T05:39:36.347Z</updated>
     
@@ -57,17 +57,17 @@
     </summary>
     
     
-      <category term="-php" scheme="https://lisuibi.github.io/categories/php/"/>
+      <category term="-php" scheme="https://blog.lisuibi.com/categories/php/"/>
     
     
-      <category term="-centos" scheme="https://lisuibi.github.io/tags/centos/"/>
+      <category term="-centos" scheme="https://blog.lisuibi.com/tags/centos/"/>
     
   </entry>
   
   <entry>
     <title>油猴+百度网盘直链下载助手+IDM</title>
-    <link href="https://lisuibi.github.io/2020/04/08/baiducloud-IDM/"/>
-    <id>https://lisuibi.github.io/2020/04/08/baiducloud-IDM/</id>
+    <link href="https://blog.lisuibi.com/2020/04/08/baiducloud-IDM/"/>
+    <id>https://blog.lisuibi.com/2020/04/08/baiducloud-IDM/</id>
     <published>2020-04-08T09:28:00.000Z</published>
     <updated>2020-06-08T03:49:56.117Z</updated>
     
@@ -84,14 +84,14 @@
     
     
     
-      <category term="-其它" scheme="https://lisuibi.github.io/tags/%E5%85%B6%E5%AE%83/"/>
+      <category term="-其它" scheme="https://blog.lisuibi.com/tags/%E5%85%B6%E5%AE%83/"/>
     
   </entry>
   
   <entry>
     <title>宝塔面板部署TP5项目</title>
-    <link href="https://lisuibi.github.io/2020/04/08/Pagoda-panel-deployment-TP5-project/"/>
-    <id>https://lisuibi.github.io/2020/04/08/Pagoda-panel-deployment-TP5-project/</id>
+    <link href="https://blog.lisuibi.com/2020/04/08/Pagoda-panel-deployment-TP5-project/"/>
+    <id>https://blog.lisuibi.com/2020/04/08/Pagoda-panel-deployment-TP5-project/</id>
     <published>2020-04-08T09:18:00.000Z</published>
     <updated>2020-06-08T05:40:35.959Z</updated>
     
@@ -107,17 +107,17 @@
     </summary>
     
     
-      <category term="-php" scheme="https://lisuibi.github.io/categories/php/"/>
+      <category term="-php" scheme="https://blog.lisuibi.com/categories/php/"/>
     
     
-      <category term="-centos" scheme="https://lisuibi.github.io/tags/centos/"/>
+      <category term="-centos" scheme="https://blog.lisuibi.com/tags/centos/"/>
     
   </entry>
   
   <entry>
     <title>laravel5.8发送邮件遇到的坑</title>
-    <link href="https://lisuibi.github.io/2020/03/19/laravel-email/"/>
-    <id>https://lisuibi.github.io/2020/03/19/laravel-email/</id>
+    <link href="https://blog.lisuibi.com/2020/03/19/laravel-email/"/>
+    <id>https://blog.lisuibi.com/2020/03/19/laravel-email/</id>
     <published>2020-03-19T04:15:00.000Z</published>
     <updated>2020-03-19T12:06:32.027Z</updated>
     
@@ -133,15 +133,15 @@
     </summary>
     
     
-      <category term="-php" scheme="https://lisuibi.github.io/categories/php/"/>
+      <category term="-php" scheme="https://blog.lisuibi.com/categories/php/"/>
     
     
   </entry>
   
   <entry>
     <title>路由器网速慢，你知道Why？</title>
-    <link href="https://lisuibi.github.io/2020/03/12/The-router-is-slow-Do-you-know-Why/"/>
-    <id>https://lisuibi.github.io/2020/03/12/The-router-is-slow-Do-you-know-Why/</id>
+    <link href="https://blog.lisuibi.com/2020/03/12/The-router-is-slow-Do-you-know-Why/"/>
+    <id>https://blog.lisuibi.com/2020/03/12/The-router-is-slow-Do-you-know-Why/</id>
     <published>2020-03-12T13:35:00.000Z</published>
     <updated>2020-03-12T17:17:51.089Z</updated>
     
@@ -158,14 +158,14 @@
     
     
     
-      <category term="路由器" scheme="https://lisuibi.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+      <category term="路由器" scheme="https://blog.lisuibi.com/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>使用php sendmail插件定时发送天气预报提醒</title>
-    <link href="https://lisuibi.github.io/2019/12/31/Send-regular-weather-alerts-using-the-PHP-sendmail-plugin/"/>
-    <id>https://lisuibi.github.io/2019/12/31/Send-regular-weather-alerts-using-the-PHP-sendmail-plugin/</id>
+    <link href="https://blog.lisuibi.com/2019/12/31/Send-regular-weather-alerts-using-the-PHP-sendmail-plugin/"/>
+    <id>https://blog.lisuibi.com/2019/12/31/Send-regular-weather-alerts-using-the-PHP-sendmail-plugin/</id>
     <published>2019-12-31T05:32:00.000Z</published>
     <updated>2020-03-12T14:30:30.791Z</updated>
     
@@ -181,15 +181,15 @@
     </summary>
     
     
-      <category term="-php" scheme="https://lisuibi.github.io/categories/php/"/>
+      <category term="-php" scheme="https://blog.lisuibi.com/categories/php/"/>
     
     
   </entry>
   
   <entry>
     <title>php基础知识</title>
-    <link href="https://lisuibi.github.io/2019/12/30/Basics-of-PHP/"/>
-    <id>https://lisuibi.github.io/2019/12/30/Basics-of-PHP/</id>
+    <link href="https://blog.lisuibi.com/2019/12/30/Basics-of-PHP/"/>
+    <id>https://blog.lisuibi.com/2019/12/30/Basics-of-PHP/</id>
     <published>2019-12-30T11:17:00.000Z</published>
     <updated>2020-03-12T14:31:28.560Z</updated>
     
@@ -205,15 +205,15 @@
     </summary>
     
     
-      <category term="-php" scheme="https://lisuibi.github.io/categories/php/"/>
+      <category term="-php" scheme="https://blog.lisuibi.com/categories/php/"/>
     
     
   </entry>
   
   <entry>
     <title>redis 实现限流</title>
-    <link href="https://lisuibi.github.io/2019/12/30/redis-Realize-the-current-limit/"/>
-    <id>https://lisuibi.github.io/2019/12/30/redis-Realize-the-current-limit/</id>
+    <link href="https://blog.lisuibi.com/2019/12/30/redis-Realize-the-current-limit/"/>
+    <id>https://blog.lisuibi.com/2019/12/30/redis-Realize-the-current-limit/</id>
     <published>2019-12-30T08:08:00.000Z</published>
     <updated>2020-03-12T14:32:25.955Z</updated>
     
@@ -230,14 +230,14 @@
     
     
     
-      <category term="-redis" scheme="https://lisuibi.github.io/tags/redis/"/>
+      <category term="-redis" scheme="https://blog.lisuibi.com/tags/redis/"/>
     
   </entry>
   
   <entry>
     <title>win10 安装mongodb</title>
-    <link href="https://lisuibi.github.io/2019/12/26/win-install-mongodb/"/>
-    <id>https://lisuibi.github.io/2019/12/26/win-install-mongodb/</id>
+    <link href="https://blog.lisuibi.com/2019/12/26/win-install-mongodb/"/>
+    <id>https://blog.lisuibi.com/2019/12/26/win-install-mongodb/</id>
     <published>2019-12-26T01:36:00.000Z</published>
     <updated>2020-03-12T14:34:21.150Z</updated>
     
@@ -254,14 +254,14 @@
     
     
     
-      <category term="-数据库" scheme="https://lisuibi.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="-数据库" scheme="https://blog.lisuibi.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>国内常用的镜像源</title>
-    <link href="https://lisuibi.github.io/2019/12/16/Domestic-common-mirror-source/"/>
-    <id>https://lisuibi.github.io/2019/12/16/Domestic-common-mirror-source/</id>
+    <link href="https://blog.lisuibi.com/2019/12/16/Domestic-common-mirror-source/"/>
+    <id>https://blog.lisuibi.com/2019/12/16/Domestic-common-mirror-source/</id>
     <published>2019-12-16T01:54:00.000Z</published>
     <updated>2020-03-12T14:33:22.058Z</updated>
     
@@ -278,14 +278,14 @@
     
     
     
-      <category term="-其它" scheme="https://lisuibi.github.io/tags/%E5%85%B6%E5%AE%83/"/>
+      <category term="-其它" scheme="https://blog.lisuibi.com/tags/%E5%85%B6%E5%AE%83/"/>
     
   </entry>
   
   <entry>
     <title>VMware15安装CentOS 7</title>
-    <link href="https://lisuibi.github.io/2019/12/15/VMware15-install-/"/>
-    <id>https://lisuibi.github.io/2019/12/15/VMware15-install-/</id>
+    <link href="https://blog.lisuibi.com/2019/12/15/VMware15-install-/"/>
+    <id>https://blog.lisuibi.com/2019/12/15/VMware15-install-/</id>
     <published>2019-12-15T09:58:00.000Z</published>
     <updated>2020-03-12T14:34:09.035Z</updated>
     
@@ -302,14 +302,14 @@
     
     
     
-      <category term="-linux" scheme="https://lisuibi.github.io/tags/linux/"/>
+      <category term="-linux" scheme="https://blog.lisuibi.com/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>Python 爬虫系列--爬取百度图片</title>
-    <link href="https://lisuibi.github.io/2019/11/01/Python-Climb-baidu-pictures/"/>
-    <id>https://lisuibi.github.io/2019/11/01/Python-Climb-baidu-pictures/</id>
+    <link href="https://blog.lisuibi.com/2019/11/01/Python-Climb-baidu-pictures/"/>
+    <id>https://blog.lisuibi.com/2019/11/01/Python-Climb-baidu-pictures/</id>
     <published>2019-11-01T13:10:00.000Z</published>
     <updated>2020-03-12T14:35:08.303Z</updated>
     
@@ -325,17 +325,17 @@
     </summary>
     
     
-      <category term="-python" scheme="https://lisuibi.github.io/categories/python/"/>
+      <category term="-python" scheme="https://blog.lisuibi.com/categories/python/"/>
     
     
-      <category term="-爬虫" scheme="https://lisuibi.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="-爬虫" scheme="https://blog.lisuibi.com/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>memcache和redis的区别</title>
-    <link href="https://lisuibi.github.io/2019/10/31/memcache-redis-between/"/>
-    <id>https://lisuibi.github.io/2019/10/31/memcache-redis-between/</id>
+    <link href="https://blog.lisuibi.com/2019/10/31/memcache-redis-between/"/>
+    <id>https://blog.lisuibi.com/2019/10/31/memcache-redis-between/</id>
     <published>2019-10-31T13:41:00.000Z</published>
     <updated>2020-03-12T14:36:10.137Z</updated>
     
@@ -351,17 +351,17 @@
     </summary>
     
     
-      <category term="-php" scheme="https://lisuibi.github.io/categories/php/"/>
+      <category term="-php" scheme="https://blog.lisuibi.com/categories/php/"/>
     
     
-      <category term="-缓存" scheme="https://lisuibi.github.io/tags/%E7%BC%93%E5%AD%98/"/>
+      <category term="-缓存" scheme="https://blog.lisuibi.com/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
   <entry>
     <title>phpstudy2018 安装redis拓展</title>
-    <link href="https://lisuibi.github.io/2019/07/28/phpstudy2018-install-redis-expand/"/>
-    <id>https://lisuibi.github.io/2019/07/28/phpstudy2018-install-redis-expand/</id>
+    <link href="https://blog.lisuibi.com/2019/07/28/phpstudy2018-install-redis-expand/"/>
+    <id>https://blog.lisuibi.com/2019/07/28/phpstudy2018-install-redis-expand/</id>
     <published>2019-07-28T05:26:00.000Z</published>
     <updated>2020-03-12T14:36:40.070Z</updated>
     
@@ -378,7 +378,7 @@
     
     
     
-      <category term="-redis" scheme="https://lisuibi.github.io/tags/redis/"/>
+      <category term="-redis" scheme="https://blog.lisuibi.com/tags/redis/"/>
     
   </entry>
   

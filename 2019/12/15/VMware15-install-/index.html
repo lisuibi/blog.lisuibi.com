@@ -22,32 +22,32 @@
 <meta name="keywords" content="-linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VMware15安装CentOS 7">
-<meta property="og:url" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;2019&#x2F;12&#x2F;15&#x2F;VMware15-install-&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;2019&#x2F;12&#x2F;15&#x2F;VMware15-install-&#x2F;index.html">
 <meta property="og:site_name" content="致梦de博客">
 <meta property="og:description" content="本篇文章记录vmware15安装CentOS7今天刚开始是用win10自带的hyper安装CentOS7，中途遇到一点问题，就打算用VM15安装CentOS7。记录一下，免得下次掉坑。1.首先安装VM15，这里我把安装包放到了百度网盘里，大家可以直接下载！链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1Jro9KzkRfDIDd2SnDFMqcw提取码：mnpa 2.下载CentOS7镜像">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215180454.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215180948.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215181033.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215181235.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215181416.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215181533.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215181716.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215182303.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215182556.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215182712.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20190117202426317.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20190117202434646.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20190117202447619.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20190117202502573.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;2019011720251619.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215191839.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;3279339690.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215180454.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215180948.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215181033.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215181235.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215181416.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215181533.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215181716.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215182303.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215182556.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215182712.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20190117202426317.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20190117202434646.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20190117202447619.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20190117202502573.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;2019011720251619.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215191839.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;3279339690.jpg">
 <meta property="og:updated_time" content="2020-03-12T14:34:09.035Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191215180454.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191215180454.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://lisuibi.github.io/2019/12/15/VMware15-install-/index.html">
+  <link rel="canonical" href="https://blog.lisuibi.com/2019/12/15/VMware15-install-/index.html">
   
     <link rel="alternate" href="/atom.xml" title="致梦de博客" type="application/atom+xml">
   
@@ -424,7 +424,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://lisuibi.github.io/2019/12/15/VMware15-install-/" title="VMware15安装CentOS 7" target="_blank" rel="external">https://lisuibi.github.io/2019/12/15/VMware15-install-/</a>
+      <a href="https://blog.lisuibi.com/2019/12/15/VMware15-install-/" title="VMware15安装CentOS 7" target="_blank" rel="external">https://blog.lisuibi.com/2019/12/15/VMware15-install-/</a>
     </li>
     
     <li class="post-copyright-license">

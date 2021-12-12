@@ -21,33 +21,33 @@
   <meta name="description" content="闲来没事，就写了一个定时发送天气预报提醒到自己qq邮箱的功能。大概逻辑：通过天气接口(免费天气接口)获取今日天气，处理好数据，最后通过mail()函数发送到邮箱（具体接口使用，自己看api文档） 1、下载sendmail.zip。链接：http:&#x2F;&#x2F;glob.com.au&#x2F;sendmail 2、下载完成，进行解压。(我是解压到D:\sendmail，最好是短路径，长路径可能会出现问题) 3、配置p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用php sendmail插件定时发送天气预报提醒">
-<meta property="og:url" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;2019&#x2F;12&#x2F;31&#x2F;Send-regular-weather-alerts-using-the-PHP-sendmail-plugin&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;2019&#x2F;12&#x2F;31&#x2F;Send-regular-weather-alerts-using-the-PHP-sendmail-plugin&#x2F;index.html">
 <meta property="og:site_name" content="致梦de博客">
 <meta property="og:description" content="闲来没事，就写了一个定时发送天气预报提醒到自己qq邮箱的功能。大概逻辑：通过天气接口(免费天气接口)获取今日天气，处理好数据，最后通过mail()函数发送到邮箱（具体接口使用，自己看api文档） 1、下载sendmail.zip。链接：http:&#x2F;&#x2F;glob.com.au&#x2F;sendmail 2、下载完成，进行解压。(我是解压到D:\sendmail，最好是短路径，长路径可能会出现问题) 3、配置p">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231141915.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231142037.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231142720.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231143018.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231144052.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231143536.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231143641.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231171428.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231171527.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231172303.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231172941.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231173035.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231173110.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231173223.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231173244.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231173652.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231173740.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231173830.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231141915.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231142037.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231142720.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231143018.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231144052.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231143536.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231143641.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231171428.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231171527.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231172303.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231172941.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231173035.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231173110.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231173223.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231173244.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231173652.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231173740.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231173830.png">
 <meta property="og:updated_time" content="2020-03-12T14:30:30.791Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;images&#x2F;20191231141915.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;images&#x2F;20191231141915.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://lisuibi.github.io/2019/12/31/Send-regular-weather-alerts-using-the-PHP-sendmail-plugin/index.html">
+  <link rel="canonical" href="https://blog.lisuibi.com/2019/12/31/Send-regular-weather-alerts-using-the-PHP-sendmail-plugin/index.html">
   
     <link rel="alternate" href="/atom.xml" title="致梦de博客" type="application/atom+xml">
   
@@ -419,7 +419,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://lisuibi.github.io/2019/12/31/Send-regular-weather-alerts-using-the-PHP-sendmail-plugin/" title="使用php sendmail插件定时发送天气预报提醒" target="_blank" rel="external">https://lisuibi.github.io/2019/12/31/Send-regular-weather-alerts-using-the-PHP-sendmail-plugin/</a>
+      <a href="https://blog.lisuibi.com/2019/12/31/Send-regular-weather-alerts-using-the-PHP-sendmail-plugin/" title="使用php sendmail插件定时发送天气预报提醒" target="_blank" rel="external">https://blog.lisuibi.com/2019/12/31/Send-regular-weather-alerts-using-the-PHP-sendmail-plugin/</a>
     </li>
     
     <li class="post-copyright-license">

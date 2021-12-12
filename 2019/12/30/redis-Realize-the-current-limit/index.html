@@ -22,14 +22,14 @@
 <meta name="keywords" content="-redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redis 实现限流">
-<meta property="og:url" content="https:&#x2F;&#x2F;lisuibi.github.io&#x2F;2019&#x2F;12&#x2F;30&#x2F;redis-Realize-the-current-limit&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;blog.lisuibi.com&#x2F;2019&#x2F;12&#x2F;30&#x2F;redis-Realize-the-current-limit&#x2F;index.html">
 <meta property="og:site_name" content="致梦de博客">
 <meta property="og:description" content="在家太无聊了，写一个redis实现限流，最主要功能实现用户10秒内只能请求5次。（都是些基础的东西）大概逻辑：用户刷新一次页面，redis把当前时间推进list队列，队列设置过期时间为10秒。如果当前队列长度大于5，则判断当前时间减去最新推进队列的时间是否小于10，如果小于10，则请求频繁，请稍后再试。 贴上代码： 12345678910111213141516171819202122232425">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-03-12T14:32:25.955Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://lisuibi.github.io/2019/12/30/redis-Realize-the-current-limit/index.html">
+  <link rel="canonical" href="https://blog.lisuibi.com/2019/12/30/redis-Realize-the-current-limit/index.html">
   
     <link rel="alternate" href="/atom.xml" title="致梦de博客" type="application/atom+xml">
   
@@ -383,7 +383,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://lisuibi.github.io/2019/12/30/redis-Realize-the-current-limit/" title="redis 实现限流" target="_blank" rel="external">https://lisuibi.github.io/2019/12/30/redis-Realize-the-current-limit/</a>
+      <a href="https://blog.lisuibi.com/2019/12/30/redis-Realize-the-current-limit/" title="redis 实现限流" target="_blank" rel="external">https://blog.lisuibi.com/2019/12/30/redis-Realize-the-current-limit/</a>
     </li>
     
     <li class="post-copyright-license">
